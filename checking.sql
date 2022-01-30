@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.4
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Mar 19, 2020 at 02:20 PM
--- Server version: 10.3.16-MariaDB
--- PHP Version: 7.3.12
+-- Host: 127.0.0.1
+-- Generation Time: Jan 30, 2022 at 05:53 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `id11191767_itschecking`
+-- Database: `its`
 --
 
 -- --------------------------------------------------------
@@ -32,15 +32,6 @@ CREATE TABLE `tb_class` (
   `id_class` int(5) UNSIGNED ZEROFILL NOT NULL,
   `c_class` varchar(10) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `tb_class`
---
-
-INSERT INTO `tb_class` (`id_class`, `c_class`) VALUES
-(00001, 'ITS36121N'),
-(00002, 'ITS35941N'),
-(00003, 'ITS35741N');
 
 -- --------------------------------------------------------
 
@@ -56,13 +47,6 @@ CREATE TABLE `tb_download` (
   `list_name` text COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `tb_download`
---
-
-INSERT INTO `tb_download` (`id`, `class`, `tream`, `year`, `list_name`) VALUES
-(00006, ' ITS36121N', '3', '2563', 'excel_ ITS36121N_3_2563.xls');
-
 -- --------------------------------------------------------
 
 --
@@ -73,17 +57,6 @@ CREATE TABLE `tb_header` (
   `id` int(5) UNSIGNED ZEROFILL NOT NULL,
   `im_imges` text COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `tb_header`
---
-
-INSERT INTO `tb_header` (`id`, `im_imges`) VALUES
-(00001, 'sci-1.png'),
-(00002, 'sci-2.png'),
-(00003, 'sci-3.png'),
-(00004, 'sci-4.png'),
-(00005, 'sci-5.png');
 
 -- --------------------------------------------------------
 
@@ -164,19 +137,6 @@ CREATE TABLE `tb_subject` (
   `code_number` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `tb_subject`
---
-
-INSERT INTO `tb_subject` (`id`, `instructor`, `sub_name`, `class`, `trem`, `year`, `list_names`, `code_number`) VALUES
-(00116, '00112', 'การเขียนเว็บไซต์', 'ITS36121N', '1', '2562', 'ใบรายชื่อวิชาการเขียนเว็บไซต์_ITS36121N_1_2562.xls', '00001'),
-(00117, '00112', 'ไอที', 'ITS36121N', '1', '2562', 'ใบรายชื่อวิชาไอที_ITS36121N_1_2562.xls', '00001'),
-(00118, '00112', 'การออกแบบ', 'ITS36121N', '2', '2562', 'ใบรายชื่อวิชาการออกแบบ_ITS36121N_2_2562.xls', '00001'),
-(00119, '00112', 'การวิเคราะห์ออกแบบระบบ', 'ITS36121N', '2', '2562', 'ใบรายชื่อวิชาการวิเคราะห์ออกแบบระบบ_ITS36121N_2_2562.xls', '00001'),
-(00120, '00112', 'ระบบเครือข่าย', 'ITS36121N', '1', '2562', 'ใบรายชื่อวิชาระบบเครือข่าย_ITS36121N_1_2562.xls', '00001'),
-(00130, '00127', ' ไพทอน', 'ITS36121N', '1', '2563', 'excel_ ไพทอน_ITS36121N_1_2563.xls', '00001'),
-(00131, '00112', ' gis', 'ITS36121N', '1', '2563', 'excel_ gis_ITS36121N_1_2563.xls', '00001');
-
 -- --------------------------------------------------------
 
 --
@@ -192,22 +152,6 @@ CREATE TABLE `tb_user` (
   `picture` text CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `status` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `tb_user`
---
-
-INSERT INTO `tb_user` (`id_user`, `fname`, `lname`, `class_s`, `email`, `picture`, `status`) VALUES
-(00108, 'H', 'H', '', 'oran9266@gmail.com', 'https://lh3.googleusercontent.com/-48TMVYAWsOc/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rdc1ZkDTbuM5CdeJ91fZ27qt4Fo-A/photo.jpg', '500'),
-(00110, 'Kanokwan', 'Khamnuanboon', '', 'kanokwan38101@gmail.com', 'https://lh3.googleusercontent.com/a-/AAuE7mBVfleWM05tjXZhZ9YM-WHvvikfgN9MybR3lc1c', '1'),
-(00112, 'อาจารย์A', 'ดีต่อใจ', '', 'oran9263@gmail.com', 'https://lh3.googleusercontent.com/a-/AAuE7mDNsiqCfjfHkpE1Vw3oGzPTYtQ5n6j4AQEAHDS2sg', 'อาจารย์ผู้สอน'),
-(00113, 'ชนาภา', 'มาประเสริฐ', 'ITS35941N', 'chapa-st@rmutsb.ac.th', 'https://lh3.googleusercontent.com/a-/AAuE7mCHD2MWb_e8mkGtM0PTslxoQb2Qix4K6BQbfjaA', 'นักศึกษา'),
-(00124, 'โอฬาร', 'หอมดี', 'ITS36121N', 'oranmail-st@rmutsb.ac.th', 'https://lh3.googleusercontent.com/a-/AAuE7mDVzGNcz_DT9uJmTZ_sDOWc4iJyjTjXnECOAKMI', 'นักศึกษา'),
-(00125, 'วิไลวรรณ', 'นิยมทอง', 'ITS36121N', 'wilaiwanniyomthong-st@rmutsb.ac.th', 'https://lh3.googleusercontent.com/a-/AAuE7mBWgX_gOu4hdtnE0xlBwvoe4lyoGxGG85c0RJR9YA', 'นักศึกษา'),
-(00126, 'อาจารย์A', 'ดีต่อใจ', '', 'oran9263@gmail.com', 'https://lh3.googleusercontent.com/a-/AAuE7mDNsiqCfjfHkpE1Vw3oGzPTYtQ5n6j4AQEAHDS2sg', 'อาจารย์ผู้สอน'),
-(00127, 'Paramin', 'Supapong', '', 'kay099966358@gmail.com', 'https://lh3.googleusercontent.com/a-/AAuE7mCSJ-Ocx_JIU1Z838aG8ovGjlNwj5YNG0k9wrI1Tg', 'อาจารย์ผู้สอน'),
-(00128, 'ปารมิน', 'สุภาพงษ์', 'ITS36121N', 'paraminits008@gmail.com', 'https://lh6.googleusercontent.com/-_aSyqdenmSw/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rebdXQOuUuyON9c3qz4shwPWMFp9g/photo.jpg', 'นักศึกษา'),
-(00129, 'Wilaiwan', 'Min', '', 'wilaiwanmin540@gmail.com', 'https://lh3.googleusercontent.com/a-/AOh14GjfAbMu-Y_UCNidE61Xr_IaZR4-db-v-p8qhX-C3A', '500');
 
 --
 -- Indexes for dumped tables
